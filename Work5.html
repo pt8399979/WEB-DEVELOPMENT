@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dummy Portfolio</title>
+        <style>
+            #A6{
+                height: 100px;
+                align-items: center;
+                font-size: 35px;
+                font-family: Arial, sans-serif;
+                font-weight: bolder;
+                text-align: center;
+                justify-content: center;
+                display: flex;
+                flex-direction: row;
+                background-color: rgba(14, 12, 12, 0.856);
+            }
+            #A6>div{
+                text-align: center;
+                color: aqua;
+                height: 40px;
+            }
+
+            nav>select{
+                display: none;
+            }
+
+            nav{
+                background-color: rgba(23, 19, 19, 0.599);                
+               
+               height: 40px; 
+                display: flex;
+                padding: 5px;
+                justify-content: space-around;
+                align-items: center;
+            }
+            nav>a:hover{
+                color: blue;
+            }
+            nav>a{
+                color: aliceblue;
+                
+                font-size: 17px;
+                font-family: verdana;
+                text-decoration: none;
+                
+            }
+            section{
+                border-radius: 10px;
+                box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+                column-gap: 20px;
+                margin: 20px;
+                padding: 15px;
+               
+                display: flex;
+                
+                text-align: center;
+                justify-content: space-around;
+            }
+
+            section>div{
+
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+            }
+
+            img{
+             
+               height: 125px;
+                width: 100px;
+            }
+
+
+            @media all and (max-width: 790px) {
+         
+                nav>select{
+                    border-color: rgba(0, 0, 0, 0.247);
+                    height: 90%;
+                    width: 100%;
+                    
+                    background-color: rgba(22, 16, 16, 0.366);   
+                    display: inline-block;
+                    border-radius: 4px;
+                    font-size: 17px;
+                font-family: verdana;
+                }
+                nav>a{
+                   
+                    display: none;
+                }
+                section{
+                border-radius: 10px;
+                box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+                column-gap: 20px;
+                margin: 20px;
+                padding: 15px;
+                    flex-direction: column;
+                display: flex;
+                align-items: center;
+                text-align: center;
+                justify-content: space-around;
+            }
+
+
+            }
+
+        </style>        
+    </head>
+    <body>
+
+        <div id="A6">
+            <div> My Portfolio</div>
+            
+        </div>
+
+
+       <nav>
+            <a href="#A1">Home</a>
+            <a href="#A2">Education</a>
+            <a href="#A3">Project</a>
+            <a href="#A4">Skills</a>
+            <a href="#A5">Contact Me</a>
+
+            <select>
+                <option value="#A1">Home</option>
+                <option value="#A2">Education</option>
+                <option value="#A3">Project</option>
+                <option value="#A4">Skills</option>
+                <option value="#A5">Contact Me</option>
+            </select>
+        </nav>    
+            <section id="A1">
+                <div>
+                    <img src="https://th.bing.com/th/id/OIP.DuWBMWKw6yorO9izlRlUuwAAAA?rs=1&pid=ImgDetMain"/>
+                </div>
+                <div>
+                    <h1 style="font-family: Arial, sans-serif; 
+                    font-weight: bold;
+                    color: rgba(48, 143, 48, 0.886);
+                ">Home</h1>
+                    <div style="font-family: verdana;">This is dummy description for the Home section. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                </div>
+
+            </section>
+
+            <section id="A2">
+                <div>
+                    <img src="https://th.bing.com/th/id/OIP.6TSI2meSPYX3i2L9kfBYkgHaEB?rs=1&pid=ImgDetMain"/>
+                </div>
+                <div>
+                    <h1 style=" font-family: Arial, sans-serif;  
+                    font-weight: bold;
+                    color: rgb(212, 43, 43);
+            ">Education</h1>
+                    <div style="font-family: verdana;">This is a dummy description for the Education section. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                </div>
+            </section>
+
+            <section id="A3">
+                <div>
+                    <img src="https://thumbs.dreamstime.com/b/project-stamp-round-vintage-grunge-label-sign-186962969.jpg"/>
+                </div>
+                <div>
+                    <h1 style="font-family: Arial, sans-serif;
+                    font-weight: bold;
+                    color: rgba(255, 252, 70, 0.989);
+               ">Projects</h1>
+                    <div style="font-family: verdana;">This is a dummy description for the Project section. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                </div>
+            </section>
+            <section id="A4">
+                <div>
+                    <img src="https://cdn.vectorstock.com/i/preview-1x/15/57/text-skill-education-learning-ability-motivation-vector-47941557.jpg"/>
+                </div>
+                <div>
+                    <h1 style="font-family: Arial, sans-serif;  
+                    font-weight: bold;
+                    color: rgba(117, 29, 173, 0.886);
+                ">Skills</h1>
+                    <div style="font-family: verdana;">This is dummy description for the Skills section. Lorem ipsum dolo sit amet, consectetur adipiscing elit.</div>
+                </div>
+            </section>
+            <section id="A5">
+                <div>
+                    <img src="https://th.bing.com/th/id/OIP.Fa-pz2VmgWTKiGJ4UlCZnwHaHg?rs=1&pid=ImgDetMain"/>
+                </div>
+                <div>
+                    <h1 style="font-family: Arial, sans-serif; 
+                    font-weight: bold;
+                    color: rgb(15, 133, 229);
+                ">Contact Me</h1>
+                    <div style="font-family: verdana;">This is a dummy description for the Contact Me section. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                </div>
+            </section>
+    </body>
+</html>
