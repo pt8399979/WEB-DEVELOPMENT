@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #HA{
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            height: 70px;
+            padding: 20px;
+
+        }
+        #HA>h1{
+            font-family: Verdana;
+            width: 40%;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #HB{
+            padding: 15px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            
+           align-items: center;
+          
+        }
+        #HB>div{
+            border-radius: 20px;
+           border-color: black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+           
+
+        }
+        #HB>div>img{
+            width: 100%;
+            height:290px ;
+        }
+        #HB>div>p{
+            font-family: verdana;
+            font-weight: bold;
+            font-size: 15px;
+
+        }
+        #HB>div>div{
+            font-family: verdana;
+
+        }
+        #HB>div>#I1{
+            width: 45%;
+            height: 60px;
+        }
+
+        
+    </style>
+</head>
+<body>
+
+    <div id="HA">
+
+    </div>
+    
+    <div id="HB">
+
+    </div>
+</body>
+<script>
+    let investor =[
+    {
+        img : "https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg",
+        name : "Vijay Shekhar Sharma",
+        position : "Founder & CEO",
+        company : "https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg"
+
+    },
+    {
+        img : "https://masai-website-images.s3.ap-south-1.amazonaws.com/Rectangle_427_637d69bb57.png",
+        name : "Kunal Shah",
+        position : "Founder",
+        company : "https://masai-website-images.s3.ap-south-1.amazonaws.com/cred_0a47d7b4f8.png"
+    }
+    ,
+    {
+        img : "https://masai-website-images.s3.ap-south-1.amazonaws.com/amrish_rau_pine_labs_144e5e587c.jpg",
+        name : "Amrish Rau",
+        position : "CEO",
+        company : "https://masai-website-images.s3.ap-south-1.amazonaws.com/pine_labs_0aa2407434.png"
+    }
+    ,
+    {
+        img : "https://masai-website-images.s3.ap-south-1.amazonaws.com/Sampad_swain_Instamojo_f12bf6341e.jpg",
+        name : "Sampad Swain",
+        position : "Co-Founder & CEO",
+        company : "https://masai-website-images.s3.ap-south-1.amazonaws.com/instamojo_8763e704f7.png"
+    }
+
+    
+]
+
+
+
+let SecBox = document.querySelector("#HB")
+
+let TopBox = document.querySelector("#HA")
+let boxA = document.createElement("h1")
+boxA.innerText="Board Members"
+TopBox.append(boxA)
+
+investor.forEach(function(ele){
+
+    let inbox = document.createElement("div")
+    let img = document.createElement("img")
+img.src = ele.img
+
+let name = document.createElement("p")
+name.innerText = ele.name
+
+let position = document.createElement("div")
+position.innerText = ele.position
+
+let company = document.createElement("img")
+company.id = "I1"
+company.src = ele.company
+
+
+inbox.append(img, name, position, company)
+
+SecBox.append(inbox)
+})
+
+</script>
+</html>
