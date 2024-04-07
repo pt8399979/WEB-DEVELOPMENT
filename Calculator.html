@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini-Calculaor</title>
+    <style>
+        #A1{
+            display: flex;
+            height: 60px;
+            background-color: cornflowerblue;
+            color:gold;
+            font-family: Verdana;
+            font-weight: bolder;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            border-color: black;
+            border-radius: 9px;
+    
+        }
+        #container{
+            margin-top: 150px;
+            justify-content: center;
+            display: flex  ;
+            background-color: brown;
+            height: 45px;
+            padding: 15px;
+            column-gap: 200px;
+            border-radius: 5px;
+            align-items: center;
+        }
+        #container>input{
+            height: 65%;
+            width: 25%;
+            border-radius: 9px;
+            background-color:whitesmoke;
+            text-align: center;
+        }
+
+        #Operator{
+            margin-top: 60px;
+            height: 30px;
+            padding: 10px;
+            display: flex;
+            background-color: yellow;
+            justify-content: space-evenly;
+            border-color: black;
+            border-radius: 5px;
+        }
+        #Operator>button{
+            width: 10%;
+            border-color: black;
+            border-radius: 10px;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            font-family: verdana;
+        }
+        
+
+        
+
+    </style>
+</head>
+<body>
+    <div id="A1"><h1>Mini Calculator</h1></div>
+    
+    
+    <div id="container">
+
+    </div>
+
+
+
+    <div id="Operator">
+
+    </div>
+
+</body>
+<script>
+
+
+    let container = document.querySelector("#container")
+
+    let first = document.createElement("input")
+    let second = document.createElement("input")
+    first.placeholder = "Enter 1st Number"
+    second.placeholder = "enter 2nd Number"
+    
+
+    container.append(first,second)
+
+    let add = document.createElement("button")
+    let subt = document.createElement("button")
+    let mult = document.createElement("button")
+    let divi = document.createElement("button")
+
+    add.innerHTML= "<h3>Add</h3>"
+    subt.innerHTML = "<h3>Subtract<h3/>"
+    mult.innerHTML = "<h3>Multiply</h3>"   
+    divi.innerHTML = "<h3>Divide</h3>" 
+    Operator.append(add, subt, mult, divi)
+
+
+        add.addEventListener("click", addCall)
+        function addCall(){
+            
+            alert("Your Anser : "+(parseInt(first.value)+parseInt(second.value)))
+            
+        }
+
+
+        subt.addEventListener("click", subCall)
+        function subCall(){
+            
+            alert("Your Anser : "+(parseInt(first.value)-parseInt(second.value)))
+            
+        }
+
+
+        mult.addEventListener("click", multCall)
+        function multCall(){
+            alert("Your Anser : "+(parseInt(first.value)*parseInt(second.value)))
+        }
+
+        divi.addEventListener("click", divCall)
+         function divCall(){
+            alert("Your Anser : "+(parseInt(first.value)/parseInt(second.value)))
+        }
+
+
+
+</script>
+</html>
