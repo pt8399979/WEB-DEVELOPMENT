@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #HA{
+            padding: 10px;
+        }
+        #HA>h1{
+            font-family: verdana;
+            font-weight: bold;           
+        }
+
+        #HB{
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+        }
+        #HB>p{
+            font-size: 20px;
+            font-family: verdana;
+        }
+
+        #HB>input{
+            padding-left: 5px;
+            border-radius: 5px;
+            width: 160px;
+        }
+        #HB>button{
+            height: 20px;
+            width: 150px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="HA">
+
+    </div>
+
+    <div id="HB">
+        
+
+    </div>
+</body>
+<script>
+     
+    let TopBox = document.querySelector("#HA")
+
+    let midA = document.createElement("h1")
+    midA.innerText = "Check Your BMI"
+    TopBox.append(midA)
+
+
+    let SecondBox = document.querySelector("#HB")
+
+    let JA = document.createElement("p")
+    JA.innerText = "Enter your weight and height below to check your BMI results"
+
+    let JB = document.createElement("p")
+    JB.innerText = "Put Your weight in here (KG)"
+
+    let JC = document.createElement("input")
+    JC.placeholder = "Weight"
+
+    let JD = document.createElement("p")
+    JD.innerText = "And your height in here (M)"
+
+    let JE = document.createElement("input")
+    JE.placeholder = "Height"
+
+    let JF = document.createElement("button")
+    JF.innerText = "Calculate BMI"
+
+    let JG = document.createElement("p")
+    
+
+
+
+
+    SecondBox.append(JA, JB, JC, JD, JE, JF, JG)
+
+    JF.addEventListener("click", BMI)
+
+    function BMI(){
+        let BM = parseInt(JC.value)/(parseInt(JE.value)*parseInt(JE.value))
+        let BI = ""
+        if(BM<=18.4){
+            BI = "Under Weight"
+        }
+        else if(BM>=18.5 && BM <=24.9){
+            BI = "Normal Weight"
+        }
+        else if(BM>=25 && BM<=29.9){
+            BI = "Over Weight"
+        }
+        else if(BM>=30){
+            BI = "Obese"
+        }
+        JG.innerText = `Your BMI is ${BM} .  Which means You are ${BI} `
+        BI = ""
+    }
+
+
+</script>
+</html>
