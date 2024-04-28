@@ -4,395 +4,149 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    
-    
     <style>
-        #container{
-    display: grid;
-    width: 80%;
-    margin: auto;
-    grid-template-columns: repeat(3, 1fr);  
-    gap: 20px  
-            
-}
-#container>div{
-    font-family: verdana;
-    text-align: center;
-    border-radius: 20px;
-    box-shadow: 1px 1px 2px 4px rgba(18, 17, 17, 0.405);
-}
-#container>div>img {
-  width: 80%;
-  height: 250px;  
 
-}
-#navbar{
-    background-color: gold;
-    border-radius: 5px;
-}
-#navbar>div{
-
-    padding-top: 15px;
-    height: 50px;
-    text-align: center;
-    font-size: 20px;
-}
-
-#W1{
-    box-shadow: 1px 1px 2px 4px rgba(18, 17, 17, 0.405);
-
-    border-radius: 10px;
-    background-color: darkolivegreen;
-    margin-top: 10px;
-    padding: 20px;
-    text-align: center;
-}
-#W1>select{
-    border-color: black;
-    border-radius: 10px;
-    text-align: center;
-    height: 50px;
-    width: 80%;
-    background-color: gold;
-}
-
-#W1>select> option{
-    color: tomato;
-
-}
-
-
-form{
-    box-shadow: 1px 1px 2px 4px rgba(18, 17, 17, 0.405);
-
-    box-shadow: 1;
-    border-radius: 10px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border-color: black;
-    padding: 20px;
-    height: 40px;
-    background-color: cadetblue;
-    text-align: center;
-    display: flex;
-    justify-content: space-evenly;
-}
-form>input{
-    color: white;
-    background-color: violet;
-border-radius: 5px;
-text-align: center;
-font-family: verdana;
-font-size: 15px;
-font-weight: bolder;
-}
-    </style>
-
-
-
+        body{
+            height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        div>h1{
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bolder;
+        }
+        .CountNo{
+            font-size: 20px;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .container{
+            box-shadow: -1px 1px 10px rgba(0, 0, 0, .5);
+            border-radius: 5px;
+            border: 1px solid red;
+            padding: 20px;
+            background-color: gray;
+            row-gap: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .Box{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: azure;
+            height: 200px;
+            width: 300px;
+            border: 0.5px solid black;
+        }
+        div>button{
+            border-radius: 5px;
+            padding: 8px 12px;
+        }
     </style>
 </head>
 <body>
-    <div id="navbar">
-        <div >
-            <input placeholder="Search By Title">
-            <button id="navbar-search">🔍</button>
+    <div class="container">
+        <div>
+            <h1>Stop Watch</h1>
+        </div>
+        <div class="Box">
+            <div class="CountNo">
+
+            </div>
+        </div>
+        <div class="functions">
+            <button class="onOFF">Start</button>
+            <button class="Reset">Reset</button>
         </div>
     </div>
-
-
-    <div id="W1">
-
-        <select id="navbar-select">
-            
-            <option value="">sort By Price</option>
-            <option value="asc">Ascending</option>
-            <option value="desc">Descending</option>
-
-        </select>
-
-    </div>
-
-
-    <form>
-
-        <input  placeholder="product's title">
-        <input placeholder="product's image link">
-        <input placeholder="product's description">
-        <input placeholder="product's price">
-        <input type="submit" >
-
-    </form>
-
-    <div id="container">
-
-    </div>
-    
-
-    <div>
-
-
-
-    </div>
 </body>
-<script >
-    let product = [ {
-    title : "Mobile",
-    description : "16 GB  RAM | 64  MP Camera",
-    img : "https://www.phonerepair.co.uk/wp-content/uploads/2021/02/iphonex-1-e1613430048184.jpg",
-     price : 50000
-}, 
-{
-       title : "Laptop",
-    description : "16 GB  RAM | 64  MP Camera",
-    img : "https://th.bing.com/th/id/OIP.n9ygplTS5yQunU1wE5FWZQAAAA?rs=1&pid=ImgDetMain",
-     price : 750000
-}
-,{
-    title : "Tab",
-    description : "16 GB  RAM | 64  MP Camera",
-    img : "https://www.resetdigitale.it/118801-thickbox_default/tablet-apple-ipad-pro-12-128gb-wifi-grigio.jpg",
-     price : 550000
-}
-,{
-    title : "Mobile",
-    description : "16 GB  RAM | 64  MP Camera",
-    img : "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/6341/6341344cv11d.jpg",
-     price : 50000
-}
-,{
-    title : "Mobile",
-    description : "16 GB  RAM | 64  MP Camera",
-    img : "https://static.toiimg.com/photo/80635345/Apple-iPhone-14.jpg",
-     price : 850000
-}
-,{
-    title : "Mobile",
-    description : "16 GB  RAM | 64  MP Camera",
-    img : "https://th.bing.com/th/id/OIP.u7fVuLYFWTDMlEuBQglsXQHaHa?rs=1&pid=ImgDetMain",
-     price : 850000
-},{
-    title : "Tab",
-    description : "16 GB  RAM | 64  MP Camera",
-    img : "https://th.bing.com/th/id/OIP.7Y1MV1JhfEO6Tws7ZbJRQwHaHa?w=800&h=800&rs=1&pid=ImgDetMain",
-     price : 550000
-},{
-    title : "Laptop",
-    description : "16 GB  RAM | 64  MP Camera",
-    img : "https://www.topprice.in/image/cache/catalog/flipkart_store_feed/43f7a6190df545c4bb0df9421a26a6d525d0d97b-600x600.jpg",
-     price : 750000
-},{
-    title : "Tab",
-    description : "16 GB  RAM | 64  MP Camera",
-    img : "https://www.gizmochina.com/wp-content/uploads/2022/11/Screenshot-2022-11-23-143346.jpg",
-     price : 550000
-}
-,{
-    title : "Mobile",
-    description : "16 GB  RAM | 64  MP Camera",
-    img : "https://th.bing.com/th/id/OIP.D1mg1YpeZJ9Rqz4iP4tTzAHaHa?rs=1&pid=ImgDetMain",
-     price : 450000
-}
-,{
-    title : "Mobile",
-    description : "16 GB  RAM | 64  MP Camera",
-    img : "https://ddtech.mx/assets/uploads/f53f2746543310765a42d9f189555fcf.jpg",
-     price : 5340000
-},{
-    title : "Tab",
-    description : "16 GB  RAM | 64  MP Camera",
-    img : "https://www.berdaya2u.com.my/image/berdaya2u/image/cache/data/all_product_images/product-4839/Untitled-1-1200x1200.jpg",
-     price : 550000
-},
-{
-    title : "Laptop",
-    description : "16 GB  RAM | 64  MP Camera",
-    img : "https://th.bing.com/th/id/OIP.S7Hp7BP5O0yVcuCMbYhbTQHaHa?w=647&h=647&rs=1&pid=ImgDetMain",
-     price : 750000
-},{
-    title : "Laptop",
-    description : "16 GB  RAM | 64  MP Camera",
-    img : "https://th.bing.com/th/id/OIP.xlCyrQpHzLoRI1XYR1jv6gAAAA?w=300&h=400&rs=1&pid=ImgDetMain",
-     price : 750000
-}
-,{
-    title : "Tab",
-    description : "16 GB  RAM | 64  MP Camera",
-    img : "https://img.gkbcdn.com/p/2021-08-11/xiaomi-mi-pad-5-tablet-cn-version-snapdragon-860-6gb-128gb-white-1628653457293._w315_.jpg",
-     price : 550000
-}
-,{
-    title : "Mobile",
-    description : "16 GB  RAM | 64  MP Camera",
-    img : "https://www.powerplanetonline.com/cdnassets/xiaomi_redmi_9c_2gb_32gb_02_negro_ad_l.jpg",
-     price : 500300
-}
-,{
-    title : "Tab",
-    description : "16 GB  RAM | 64  MP Camera",
-    img : "https://www.comprasparaguai.com.br/media/fotos/produtos/thumbs/big/1e8f3f992a62149b8a7a6aaced10470bae23b067.jpg",
-     price : 550000
-}
-,{
-    title : "Mobile",
-    description : "16 GB  RAM | 64  MP Camera",
-    img : "https://th.bing.com/th/id/OIP.-5ZWectqP4N3PUuI9R3THwHaKC?rs=1&pid=ImgDetMain",
-     price : 430000
-}
-,{
-    title : "Mobile",
-    description : "16 GB  RAM | 64  MP Camera",
-    img : "https://www.phonerepair.co.uk/wp-content/uploads/2021/02/iphonex-1-e1613430048184.jpg",
-     price : 509000
-}
-,{
-    title : "Mobile",
-    description : "16 GB  RAM | 64  MP Camera",
-    img : "https://www.phonerepair.co.uk/wp-content/uploads/2021/02/iphonex-1-e1613430048184.jpg",
-     price : 598000
-}
-,{
-    title : "Mobile",
-    description : "16 GB  RAM | 64  MP Camera",
-    img : "https://www.phonerepair.co.uk/wp-content/uploads/2021/02/iphonex-1-e1613430048184.jpg",
-     price : 79000
-}
-,{
-    title : "Tab",
-    description : "16 GB  RAM | 64  MP Camera",
-    img : "https://www.resetdigitale.it/118801-thickbox_default/tablet-apple-ipad-pro-12-128gb-wifi-grigio.jpg",
-     price : 550000
-},
-{
-    title : "Laptop",
-    description : "16 GB  RAM | 64  MP Camera",
-    img : "https://th.bing.com/th/id/OIP.n9ygplTS5yQunU1wE5FWZQAAAA?rs=1&pid=ImgDetMain",
-     price : 750000
-},{
-    title : "Tab",
-    description : "16 GB  RAM | 64  MP Camera",
-    img : "https://www.resetdigitale.it/118801-thickbox_default/tablet-apple-ipad-pro-12-128gb-wifi-grigio.jpg",
-     price : 550000
-},{
-    title : "Mobile",
-    description : "16 GB  RAM | 64  MP Camera",
-    img : "https://www.phonerepair.co.uk/wp-content/uploads/2021/02/iphonex-1-e1613430048184.jpg",
-     price : 509000
-}
-
-]
-
-
-let container = document.querySelector("#container");
-
-let inputBox = document.querySelector("#navbar>div>input")
-
-let searchBtn = document.querySelector("#navbar-search")
-
-let selectPrice = document.querySelector("#navbar-select")
-
-let form = document.querySelector("form")
-function showData(arr){
-    container.innerHTML = ""
-    arr.forEach(function(ele, i){
-     
-        let separateDiv = document.createElement("div")
+<script>
+    let Box = document.querySelector(".Box")
+    let Reset =document.querySelector(".Reset")
+    let onOFF =  document.querySelector('.onOFF')
+    let CountNo = document.querySelector('.CountNo')
+    CountNo.innerHTML = "0s"
     
-        let title = document.createElement("h3")
-        title.innerHTML = ele.title
-    
-        let img = document.createElement("img")
-        img.src = ele.img
-    
-        let desc = document.createElement("p")
-        desc.innerText  = ele.description
-    
-        let price = document.createElement("p")
-        price.innerText = ele.price
-
-        let deleteBtn = document.createElement("button")
-        deleteBtn.innerHTML = "Delete 🗑️" 
-    
-        deleteBtn.addEventListener("click", function(){
-            deleteData(i)
-        })
-
-        separateDiv.append(img, title, desc, price, deleteBtn)
-        container.append(separateDiv)    
-    })  
-}
-
-function deleteData(index){
-    product.splice(index,1)
-    showData(product)
-}
-
-searchBtn.addEventListener("click", searchData)
-
-selectPrice.addEventListener("change", sortData)
-
-
-function searchData(){
-    let value = inputBox.value;
-    let nrr = product.filter(function(ele){
-        return ele.title.toLowerCase() === value.toLowerCase()
+    let count = 0;
+    let Interval;
+    onOFF.addEventListener("click" , ()=>{
+        count%2==0 ? start() : stop();
+       count++
     })
-    if(nrr.length>0){
-        showData(nrr)
-    }
-    else{
-        container.innerHTML = "<h2>Product not found...</h2>"
-    }
-}
 
-showData(product)
+    Reset.addEventListener("click", ()=>{
+         pulse = 0;
+         sec = 0;
+         min = 0; 
+         hr = 0;
+         CountNo.innerHTML = `${pulse}s`
+         onOFF.innerHTML = "Start"
+         
+         clearInterval(Interval)
 
-
-form.addEventListener("submit", function(event){
-    handleSubmit(event)
-})
-
-
-
-function handleSubmit(e){
+    })
     
-    e.preventDefault()
-    let inputs = e.target
-    let title = inputs[0].value
-    let img  = inputs[1].value
-    let desc = inputs[2].value
-    let price = inputs[3].value
-    
-    let obj = {
-        title : title,
-        description : desc,
-        img : img,
-        price: price
+    let pulse = 0;
+        let sec = 0;
+        let min = 0; 
+        let hr = 0;
+    const counting =()=>{
+
+     
+        Interval = setInterval(()=>{
+            
+            if(pulse<100){
+                CountNo.innerHTML = `${pulse}s`
+                pulse++
+            }
+            else{
+                pulse = 0
+                sec++
+            }
+            if(sec<61){
+                CountNo.innerHTML = `${sec}s ${pulse}`
+            }
+            else{
+                sec = 0
+                min++
+            }
+            if((min<61)){
+                CountNo.innerHTML = `${min}m ${sec}s ${pulse}`
+            }
+            else{
+                min=0
+                hr++
+            }
+            if(0<hr){
+                CountNo.innerHTML = `${hr}h ${min}m ${sec}s ${pulse}`
+            }
+            
+        },10)
+
 
     }
-    product.push(obj)
-    showData(product)
-}
-function sortData(){
-    let value = selectPrice.value
-     let nrr;
 
-     if(value==="asc"){
-        nrr = product.sort(function(a,b){
-            return a.price-b.price
-        })
-     }
-     else if(value==="desc"){
-        nrr = product.sort(function(a,b){
-            return b.price-a.price
-        })
-
-
-     }
-
-     showData(nrr)
-}
-
+    const stopCounting = ()=>{
+        clearInterval(Interval)
+    }
+    const start = ()=>{
+        counting()
+        onOFF.innerHTML = "Stop"
+        
+    }
+    const stop = ()=>{
+        stopCounting()
+        onOFF.innerHTML = "Start"
+        
+    }
+    
 
 </script>
 </html>
