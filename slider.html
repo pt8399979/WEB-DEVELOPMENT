@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="UTF-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Document</title>
+
+        <style>
+
+            body{
+                display: flex;
+                height: 80vh;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                background-color: gray;
+            }
+            #container{
+                width: 100%;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                gap : 50px;
+                align-items: center;
+             
+            
+            }
+            #slide_Box{
+                overflow: hidden;
+                box-shadow: -1px 1px 10px rgba(0, 0, 0, .5);
+                background-color: silver;
+                
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 5px;
+
+                width: 250px;
+                height: 300px;         
+               
+                
+                
+
+            }
+
+            .arrow{
+                cursor: pointer;
+                height: 30px;
+                width: 30px;
+            }
+            .left{
+                transform: rotate(180deg);
+            }
+            .slide{
+                  border-radius: 5px;   
+                display: flex;
+               transition:  all 1s ease;
+                height: 100%;
+                width: 100%;
+                border: 0.5px solid green;
+            }
+            .slide>img{
+               height: 100%;
+               width: 100%;
+               object-fit: cover;
+                
+            }
+            #container2{
+                margin-top: 10px;
+            }
+            .control{
+                cursor: pointer;
+                background-color: red;
+                font-family: Arial, Helvetica, sans-serif;
+                padding: 10px 15px;
+                color: azure;
+                border: 0.5px solid silver;
+                border-radius: 30%;
+            }
+
+             
+
+
+        </style>
+
+    </head>
+
+    <body>
+
+        <div id="container">
+
+            <img src="https://cdn.iconscout.com/icon/free/png-256/free-right-arrow-2693174-2234857.png"  class="arrow left">
+
+            <div id="slide_Box">
+
+                <div class="slide">
+
+                </div>
+
+
+            </div>
+
+            <img src="https://cdn.iconscout.com/icon/free/png-256/free-right-arrow-2693174-2234857.png" class="arrow right">
+
+        </div>
+
+        <div id="container2">
+
+            <div class="control">
+                Stop
+            </div>
+
+        </div>
+    
+    </body>
+
+    <script>
+//         let data ;
+
+// let showData =(arr)=>{
+//     console.log(arr)
+// }
+// let getData = async ()=>{
+//     let res = await fetch("https://fakestoreapi.com/products")
+//     data = await res.json()
+//     showData(data)
+// }
+// getData()
+
+    let slide = document.querySelector(".slide")
+    let Box = document.querySelector("#slide_Box")
+    let data = [
+        {img :"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9Sa4EuDLMzeKGDZl13I757CF3lqO-A9woY2fXddI-pQ&s"},
+        {img : "https://traveljingles.com/wp-content/uploads/2022/04/R.jpg"},
+        {img : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTWwaecHaNUAWR-n3Z-S96tTWwmqjg8oDMkcCCwa7NTA&s"},
+        {img : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUlIlUBUY5TOP2T_wEMExcCKgUTj4dUruMIpNJz2YanA&s"},
+        {img : "https://media.architecturaldigest.com/photos/57c7003fdc03716f7c8289dd/master/pass/IMG%20Worlds%20of%20Adventure%20-%201.jpg"},
+        {img : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXx8V-ePifTb_cHbxDytWPmMAmPF68RNgOI4_BL991k39SkmTH3-F4VFa4aslWx66-fw8&usqp=CAU"},
+        {img : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTH-L2fx_g1oUGNJV_mn0-tN5j8mqf58SSlU3_sM-m57g&s"},
+        {img : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1jtCtnD2gZlbqzUN7slqZFUTFfQ-coHHN3iFH00997Lk7Ka73xpn1OcYMo2GwMoW-5_A&usqp=CAU"},
+        {img : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREWEwFXo3toKxcTzhmdinEHe7c9dju6Tr8Oqp_35N4HRqGOcL8ehjIYTmyzsTvXmtkfU0&usqp=CAU"},
+        {img : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTp52weF8VVvABKWnLQ1RjfEafSUbZqKUArmd2RTBS6rQ&s"},
+        {img : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzYkDUN3srBLePyUDHiopUirMB3cNhskLWvUr3fhVnQA&s"},
+        {img : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3Mb0wZaK92-cBsAjDNLf4QqQptz8X497doOZ_GmXUfKVZ2uuhqbyKZdj61kkFTkzNgaM&usqp=CAU"},
+        {img : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMh99O0bo6Qmm9-b913EeJR7iWNRQkR16WgA4dJRG3yA&s"},
+        {img : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyzay3rriZZpOBvNUV0MLL38ZYUlaV6aoWrFuwUEoJK6Ihtr5U3EoWVFLLcKkUGDNOlr0&usqp=CAU"},
+        {img : "https://i.ytimg.com/vi/HQOM2TZlKeg/maxresdefault.jpg"},
+        {img : "https://i.ytimg.com/vi/HQOM2TZlKeg/maxresdefault.jpg"},
+        {img : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsYQJ8PuVigtyJQsSIMP1a9Z758MJCn8PXzvojy1loegoCZ8FRMN8oq59yWLMHFoxB1BI&usqp=CAU"},
+        {img : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6U5FjqNCCPYf2lhrkdLCBw98M4FgCxSxiwX0GNoFUKA&s"},
+        {img : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfFodrU0rcOa6hbauBC7OLAPRkMHKj0MPXRjr_Yq-tWg&s"},
+        {img : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKyICRmH0_k97oxfCCJJAyWUJC8yHAZeS3SPpVSgAwuA&s"},
+        {img : "https://t3.ftcdn.net/jpg/05/00/03/40/360_F_500034098_a0UNkugmhab6ExU2dR6jTQmvmMANyPZw.jpg"},
+        {img : "https://img.freepik.com/free-photo/vibrant-colors-nature-close-up-wet-purple-daisy-generated-by-artificial-intellingence_25030-63819.jpg"}
+    ]
+    function showdata(arr){
+        arr.forEach(function(ele, i){
+        let img = document.createElement("img")
+        img.src= `${ele.img}`
+        slide.append(img)
+        })
+    }
+
+
+
+    showdata(data)
+    let count = 0
+    let control = document.querySelector(".control")
+    control.addEventListener("click", function(){
+        count++
+        if(count%2==0){
+            startSlideShow()
+            control.innerHTML = "Stop"
+        }
+        else{
+            stopSlideShow()
+            control.innerHTML = "Start"
+            
+        }
+    })
+
+    let slideNo = 1
+    const imgesNo = data.length
+    let right = document.querySelector(".right")
+    let left = document.querySelector(".left")
+    const nextSlide = ()=>{
+         slide.style.transform = `translateX(-${slideNo*248.4}px)`
+            slideNo++
+    }
+    const getFirst = ()=>{
+          slide.style.transform = `translateX(0px)`
+            slideNo = 1
+    }
+    const prevSlide = ()=>{
+         slide.style.transform = `translateX(-${(slideNo-2)*248.4}px)`
+            slideNo--
+    }
+    const getLast = ()=>{
+          slide.style.transform = `translateX(-${(imgesNo-1)*248.4}px)`
+            slideNo = imgesNo
+    }
+    right.addEventListener("click", ()=>{
+
+        slideNo < imgesNo ? nextSlide():getFirst();
+   
+    })
+    left.addEventListener("click", ()=>{
+
+        slideNo > 1 ? prevSlide():getLast();
+   
+    })
+    let Interval;
+    const startSlideShow =()=>{
+        Interval = setInterval(()=>{
+            slideNo < imgesNo ? nextSlide():getFirst();
+        }, 2000)
+    }
+    startSlideShow()
+
+    const stopSlideShow =()=>{
+        clearInterval(Interval)
+    }
+    
+    slide.addEventListener('mouseover', stopSlideShow)
+    slide.addEventListener('mouseout', startSlideShow)
+    
+    left.addEventListener('mouseover', stopSlideShow)
+    left.addEventListener('mouseout', startSlideShow)
+    
+    right.addEventListener('mouseover', stopSlideShow)
+    right.addEventListener('mouseout', startSlideShow)
+    
+
+
+
+
+
+    </script>
+
+</html>
